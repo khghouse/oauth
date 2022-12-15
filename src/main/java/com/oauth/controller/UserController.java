@@ -1,7 +1,11 @@
 package com.oauth.controller;
 
+import com.oauth.model.User;
+import com.oauth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -11,7 +15,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/user")
-    public List listUser() {
+    public List<User> listUser() {
         return userService.findAll();
     }
 
